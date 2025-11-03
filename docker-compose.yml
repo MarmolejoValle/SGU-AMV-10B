@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   frontend:
-      image: frontend:latest
+      image: client:1.0-sgu
       build: 
         context: ./frontend
         args:
@@ -30,7 +30,7 @@ services:
       depends_on:
         - database
   backend:
-    image: server:latest
+    image: server:1.0-sgu
     build:
       context: ./server
     container_name: sgu-server
